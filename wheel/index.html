@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			body {
+		box-sizing: border-box;
+		text-align: center;
+		background-image: url("http://www.wheelofgifts.com/img/pattern.png");
+		}
+		#wheel {
+		display: inline-block;
+		width: 800px;
+		height: 800px;
+		margin-top: 4%;
+		transition: transform 10s;
+		transform: rotate(0deg);
+		}
+		#arrow {
+		display: block;
+		position: absolute;
+		top: 70%;
+		left: 80%;
+		}
+		#button{
+		width: 150px;
+		height: 150px;
+		}
+		img{
+		margin-left: -97px;
+		margin-top: -30px;
+		}
+		</style>
+	</head>
+	<body>
+		<img src="http://www.wheelofgifts.com/img/lang/wheel_main_EN.png" id="wheel"><br>
+		<img src="http://www.wheelofgifts.com/img/pointer.png" id="arrow"><br>
+		<button id="button"><img src="http://www.wheelofgifts.com/img/lang/spin_EN.png"></button>
+		<script type="text/javascript">
+		var wheel = document.querySelector("#wheel"),
+		button = document.querySelector("#button"),
+		random = 0;
+		var playWheel = function () {
+		random += (Math.random() * 360) + 4000;
+		wheel.style.webkitTransform = "rotate(" + random + "deg)";
+		}
+		button.addEventListener("click", playWheel);
+		</script>
+	</body>
+</html>
