@@ -1,0 +1,118 @@
+<!--http://JunesiPhone.com-->
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+    html{
+		margin:0;
+		padding: 0;
+	}
+	.clock{
+	position: absolute;
+    top:20px;
+    left:400px;
+		width: 600px;
+		height: 600px;
+		background-size: 100%;
+	}
+	.transform{
+		width: 2px;
+		position: absolute;
+		left:49px;
+		-webkit-transform-origin:bottom;
+	}
+	#saniye{
+		top:31%;
+    left: 20%;
+		background-color: red;
+		height: 320px;
+    width: 20px;
+    transform-origin: bottom;
+
+	}
+	#deqiqe{
+		top:31%;
+    left: 20%;
+		background-color: black;
+		height: 300px;
+    width: 15px;
+      transform-origin: bottom;
+	}
+	#saat{
+		top:35%;
+    left: 20%;
+		background-color: purple;
+		height: 280px;
+    width: 10px;
+    transform-origin: bottom;
+	}
+  #circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 300px;
+    background-color: black;
+    position: absolute;
+    top: 470px;
+    left: 95px;
+  }
+	#center{
+		position: absolute;
+		left:50%;
+		top:50%;
+		width: 10px;
+		height: 10px;
+		background-color: black;
+		border-radius: 100%;
+	}
+  .grad {
+    height: 200px;
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, black); /* Standard syntax (must be last) */
+}
+.grad2 {
+    height: 200px;
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(yellow, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(yellow, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(yellow, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(yellow, black); /* Standard syntax (must be last) */
+}
+.grad3 {
+    height: 200px;
+    background: black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(purple, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(purple, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(purple, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(purple, black); /* Standard syntax (must be last) */
+}
+
+    </style>
+</head>
+<body onload="tikTak()">
+<img src="image/clock.gif">
+    <div class="clock">
+        <div id="saniye" class="transform grad"></div>
+        <div id="deqiqe" class="transform grad2"></div>
+        <div id="saat" class="transform grad3"></div>
+        <div id="circle"></div>
+        <div id="center"></div>
+    </div>
+    <script type="text/javascript">
+    		function tikTak(){
+      with(new Date()){
+        var saat, deqiqe, saniye;
+        saat = 30 * (getHours() % 12 + getMinutes() / 60);
+        deqiqe = 6 * getMinutes();
+        saniye = 6 * getSeconds();
+        document.getElementById('saniye').style.cssText="transform:rotate("+saniye+"deg);";
+        document.getElementById('deqiqe').style.cssText="transform:rotate("+deqiqe+"deg);";
+        document.getElementById('saat').style.cssText="transform:rotate("+saat+"deg);";
+        setTimeout(tikTak, 1000);
+      }
+	}
+    </script>
+</body>
+</html>
